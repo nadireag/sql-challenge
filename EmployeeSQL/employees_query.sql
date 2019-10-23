@@ -1,7 +1,7 @@
 -- 1. List the following details of each employee: employee number, last name, first name, gender, and salary.
 SELECT e.emp_no, e.last_name, e.first_name, e.gender, s.salary
 FROM employees AS e
-LEFT JOIN salaries AS s
+INNER JOIN salaries AS s
 ON e.emp_no = s.emp_no;
 
 --2. List employees who were hired in 1986.
@@ -12,9 +12,9 @@ WHERE hire_date >= '1986-01-01' AND hire_date <= '1986-12-31';
 --the manager's employee number, last name, first name, and start and end employment dates.
 SELECT dm.dept_no, d.dept_name, dm.emp_no, e.last_name, e.first_name, dm.from_date, dm.to_date
 FROM dept_manager AS dm
-LEFT JOIN departments AS d
+INNER JOIN departments AS d
 ON d.dept_no = dm.dept_no
-LEFT JOIN employees AS e
+INNER JOIN employees AS e
 ON dm.emp_no = e.emp_no;
 
 
@@ -22,9 +22,9 @@ ON dm.emp_no = e.emp_no;
 --and department name.
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees AS e
-LEFT JOIN dept_emp AS de
+INNER JOIN dept_emp AS de
 ON e.emp_no = de.emp_no
-LEFT JOIN departments AS d
+INNER JOIN departments AS d
 ON de.dept_no=d.dept_no;
 
 
@@ -36,9 +36,9 @@ WHERE first_name = 'Hercules' AND last_name LIKE 'B%';
 --and department name.
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees AS e
-LEFT JOIN dept_emp AS de
+INNER JOIN dept_emp AS de
 ON e.emp_no = de.emp_no
-LEFT JOIN departments AS d
+INNER JOIN departments AS d
 ON de.dept_no = d.dept_no
 WHERE dept_name = 'Sales';
 
@@ -46,9 +46,9 @@ WHERE dept_name = 'Sales';
 --first name, and department name.
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees AS e
-LEFT JOIN dept_emp AS de
+INNER JOIN dept_emp AS de
 ON e.emp_no = de.emp_no
-LEFT JOIN departments AS d
+INNER JOIN departments AS d
 ON de.dept_no = d.dept_no
 WHERE dept_name IN ('Sales', 'Development');
 
