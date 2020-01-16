@@ -44,8 +44,6 @@ Inspect the CSVs and sketch out an ERD of the tables.
    connection = engine.connect()
    ```
 
-* Consult [SQLAlchemy documentation](https://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql) for more information.
+1. Create a histogram to visualize the most common salary ranges for employees.
 
-2. Create a histogram to visualize the most common salary ranges for employees.
-
-3. Create a bar chart of average salary by title.
+2. Create a bar chart of average salary by title.
